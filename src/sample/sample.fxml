@@ -1,0 +1,68 @@
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.ToggleButton?>
+<BorderPane fx:id="mainBorderPane" fx:controller="sample.Controller"
+            xmlns:fx="http://javafx.com/fxml" stylesheets="@style.css">
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="File">
+                    <MenuItem text="New.." onAction="#showNewItemsDialog"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Exit" onAction="#exit"/>
+                </Menu>
+            </MenuBar>
+            <ToolBar>
+                <HBox>
+                    <Button text="New.." onAction="#showNewItemsDialog">
+                        <tooltip>
+                            <Tooltip text="Add a new Todo items "/>
+                        </tooltip>
+                        <graphic>
+                            <ImageView>
+                                <Image url="@/toolbarButtonGraphics/general/New24.gif"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <ToggleButton fx:id="filterToggleButton" text="Today todo items" onAction="#handleFilterButton">
+                        <tooltip>
+                            <Tooltip text="Today todo Items"/>
+                        </tooltip>
+                    </ToggleButton>
+                </HBox>
+            </ToolBar>
+        </VBox>
+    </top>
+    <left>
+        <ListView fx:id="listView" onKeyPressed="#handleKeyPressed">
+        </ListView>
+    </left>
+    <center>
+        <VBox style="-fx-background-color: white">
+            <TextArea fx:id="textArea" VBox.vgrow="ALWAYS">
+            </TextArea>
+            <HBox>
+                <Label text="Due : "
+                       style="-fx-font-size: 28; -fx-background-color: white; -fx-font-weight: bolder; -fx-text-fill: red">
+                </Label>
+                <Label fx:id="localDate"
+                       style="-fx-background-color: white; -fx-font-weight: bold; -fx-font-size: 27">
+
+                </Label>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

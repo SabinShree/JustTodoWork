@@ -1,0 +1,17 @@
+.button {
+    -fx-background-color: green;
+    -fx-text-fill: white;
+}
+.toggle-button{
+    -fx-background-color: grey;
+    -fx-text-fill: #42feef;
+}
+.toggle-button:selected{
+    -fx-background-color: white;
+    -fx-text-fill: blue;
+}
+
+.list-cell:selected{
+    -fx-background-color: #97f4ef;
+    -fx-text-fill: #262c3c;
+}
